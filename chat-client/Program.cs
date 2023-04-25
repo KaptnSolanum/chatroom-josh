@@ -75,6 +75,18 @@ public class ChatClient
         writer.WriteLine("SAY|{0}|", message);
         writer.Flush();
     }
+    public void List()
+    {
+        // List all connected users
+        writer.WriteLine("LIST|")
+        writer.Flush();
+    }
+    public void Time()
+    {
+        // Print the server time
+        writer.WriteLine("TIME|")
+        writer.Flush();
+    }
 }
 
 class Client {
@@ -96,6 +108,12 @@ class Client {
     }
     public void Say(string message) {
         Send($"SAY|{message}|");
+    }
+    public void List() {
+        Send($"LIST|");
+    }
+    public void Time() {
+        Send($"TIME|");
     }
     public void Exit() {
         Send($"EXIT|");
